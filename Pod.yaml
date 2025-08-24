@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Pod
+metadata:
+  name: nginx-single-pod
+  namespace: app-1
+  labels:
+    app: nginx-pod-eg
+spec:
+  template:
+    metadata:
+      labels:
+        app: nginx-pod
+    containers:
+      - name: nginx-pod-container
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+
+    
