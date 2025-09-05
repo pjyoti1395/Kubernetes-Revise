@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name:   Pod-With-ConfigMap-Env-Var-Demo
+  namespace: app-1
+  labels: 
+    app: Pod-With-ConfigMap-Env-Var
+spec:
+  containers:
+    - name: Nginx-ConfigMap-With-Env-Container
+      image:  nginx:1.19
+      ports:
+        - containerPort: 82
+      env:
+        - name: DATABASE_HOST     #  Environment variable inside container
+          valueFrom:
+            configMapKeyRef:
+              name: configmap-env-demo     # metadata.name from the ConfigMap.yaml
+              key:  hostname      
+        - name: DATABASE_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: configmap-env-demo    # metadata.name from the ConfigMap.yaml
+              key:  portname
+        - name: Environment_Name
+          valueFrom:
+            configMapKeyRef: 
+              name: configmap-env-demo
+              key:  environment
+

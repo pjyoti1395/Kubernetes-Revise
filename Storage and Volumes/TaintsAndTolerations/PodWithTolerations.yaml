@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: pod-with-tolerations-demo
+spec:
+  containers:
+    - name:  nginx-mysql
+      image: mysql:5.7
+      port:
+        - containerPort : 20
+      env:
+        - name: MY_SQL_PASSWORD
+          value: root@123
+  tolerations:
+    - key: "dedicated"
+      value: "database"
+      operator: "equal"
+      effect: "NoSchedule"
+

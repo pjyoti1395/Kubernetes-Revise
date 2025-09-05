@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap 
+metadata:   
+  name: configmap-env-demo
+data:
+  hostname: abc.example.com
+  portname: "3300"
+  environment: production

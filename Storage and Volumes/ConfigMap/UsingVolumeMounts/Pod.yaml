@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name:  Pod-With-ConfigMap-VolumeMount-Var-Demo
+  namespace: Pod-With-ConfigMap-VolumeMount-Var
+  labels: 
+    app: Pod-With-VolumeMount-Var
+spec:
+  containers:
+    - name: Nginx-ConfigMap-With-VolumeMount-Container
+      image: nginx:1.17
+      ports:
+        containerPort: 90
+      volumeMounts:
+        - name:  config-volume
+          mountPath: /app
+          readOnly: true
+  volumes:
+    - name: config-volume
+      configMap:
+        name: configmap-volumemount-demo  # metadata.name  from configmap.yaml

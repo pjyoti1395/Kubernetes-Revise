@@ -1,0 +1,22 @@
+apiVersion: v1
+kind:  Pod
+metadata:
+  name:  emptydir-pod-demo
+spec:
+  containers:
+    - name:
+      image: nginx:latest
+      port:
+        containerPort: 30
+  volumesMounts:
+    - name:  temp-storage
+      mountPath: /data
+volume:
+  - name:  temp-storage
+    emptyDir: {}
+
+
+
+
+    #emptyDir: {} is created inside the pod and  once the pod is deleted the data inside the 
+    #emptyDir() is also  gone .. #

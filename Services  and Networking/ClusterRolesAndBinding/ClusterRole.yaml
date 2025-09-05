@@ -1,0 +1,8 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cluster-role-demo
+rules:
+  apiGroups: [""]    # "" means core API group
+  resources: ["pods"]        # The resource this role can access
+  verbs: ["get", "list", "watch"]  # Allowed actions

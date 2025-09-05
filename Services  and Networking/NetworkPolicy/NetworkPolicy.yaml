@@ -1,0 +1,58 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-frontend-to-backend-communication
+spec:
+  podSelector:  
+    matchLabels:
+      app: network-policy-backend
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - podSelector:  
+            matchLabels:
+              app: network-policy-frontend
+      ports:
+        - protocol: TCP
+          port: 80
+    
+  
+
+#  podSelector: Selects backend Pods to protect.
+#  policyTypes: Ingress: Controls incoming traffic only.
+#  ingress.from: Only allows Pods with app=frontend.
+#  Any other Pod (say random-pod) will be blocked from accessing backend.
+
+
+
+
+
+# apiVersion: networking.k8s.io/v1
+# kind: NetworkPolicy
+# metadata:
+#   name: allow-backend-to-frontend-communication
+# spec: 
+#   podSelector:
+#     matchLabels:
+#         app:  network-policy-frontend
+#   policyTypes: 
+#     - Egress
+#   egress:
+#     - to:
+#       - podSelector:
+#           matchLabels:
+#             app:  network-policy-backend
+#       ports:
+#         - protocol: TCP
+#           port: 80 
+    
+
+    # block comment in visual studio code :- Ctrl + /
+    # uncomment in visual studio :- Ctrl + K U 
+
+# from the frontend the traffic is egressed  ie sent outside to the backend 
+
+
+
+  

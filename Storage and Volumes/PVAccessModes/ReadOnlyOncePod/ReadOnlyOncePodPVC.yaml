@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: read-only-once-persistent-volume-claim-demo
+spec:
+  accessModes:
+    - ReadOnlyOncePod
+  resources:
+    requests:
+      storage: 2Gi
+  storageClassName: manual

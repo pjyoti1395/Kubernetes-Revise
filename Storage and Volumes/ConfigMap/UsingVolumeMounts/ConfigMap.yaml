@@ -1,0 +1,7 @@
+apiVersion: v1
+kind:  ConfigMap
+metadata:
+  name: configmap-volumemount-demo
+data:
+  DBName: www.mysql.com
+  DBPort: "3300"

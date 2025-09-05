@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: hostpath-pod-demo
+spec:
+  containers:
+    - name: nginx-hostpath-demo-container
+      image: nginx:1.18
+  volumeMounts:
+    - name: hostpath-volume
+      path: /app             # Inside the container
+volume:
+  - name: hostpath-volume
+    hostPath: 
+      path: /data/my-website     # Path on the Node
+      type:   DirectoryOrCreate      # Create if it doesn't exist
+ 

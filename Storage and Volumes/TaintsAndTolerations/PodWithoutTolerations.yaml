@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-pod
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+
+
+
+# The node node1 is tainted → only Pods that tolerate 
+# dedicated=database:NoSchedule can run there.
+# db-pod has the toleration → it can be scheduled on node1.
+# app-pod has no toleration → it will be kept away from node1. 
+# Instead, it will run on other available nodes.

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name:  pod-using-service-account
+  namespace: app-1
+spec:
+  - serviceAccountName:  service-account-demo 
+    containers:
+      - name:  pod-with-service-account
+        image: nginx:latest
+        

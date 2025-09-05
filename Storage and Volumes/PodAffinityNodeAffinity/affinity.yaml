@@ -1,0 +1,68 @@
+apiVersion:
+kind:
+metadata:
+  name:
+  labels:
+    app: nginx
+spec:
+  replicas:
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+  spec:
+    containers:
+      - name:
+        image:
+    
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+              - key:
+                operator:
+                values:
+        
+        preferredDuringSchedulingIgnoredDuringExecution:
+          - weight:
+            preference:
+              matchExpressions:
+                - key:
+                  operator:
+                  values:
+          
+
+
+      podAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+                - key:
+                  operator:
+                  values:
+            topologyKey:
+
+      podAntiAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+          - weight:
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key:
+                  operator:
+                  values:
+                topologyKey:
+             
+
+
+             # this yaml is just an attempt to remember the attributes without seeking help 
+        
+
+
+
+
+  

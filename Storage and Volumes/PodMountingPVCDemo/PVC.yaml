@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:  
+  name: pod-mounting-pvc-demo
+spec:
+  accessModes:
+    - ReadOnlyOnce
+  resources:
+    requests:
+      storage:  1Gi
+  storageClassName : pod-mounting-pvc-storage-class 

@@ -1,0 +1,12 @@
+apiVersion:  rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: view-pods-role-binding
+subjects:
+  - kind: ServiceAccount
+    name: service-account-view-pods-demo
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: roles-for-viewing-pods
+  apiGroup: rbac.authorization.k8s.io

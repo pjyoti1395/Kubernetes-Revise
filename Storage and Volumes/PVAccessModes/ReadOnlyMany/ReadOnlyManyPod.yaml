@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: read-only-many-pod-demo
+spec:
+  containers:
+    - name: nginx-read-only-many-container
+      image: nginx:latest
+      volumeMounts:
+        - name: read-only-many-volume
+          mountPath: "/app/data"
+          readOnly: true
+  volumes:  
+    - name: read-only-many-volume
+      persistentVolumeClaim:
+        claimName: readonly-many-persistent-volume-claim-demo

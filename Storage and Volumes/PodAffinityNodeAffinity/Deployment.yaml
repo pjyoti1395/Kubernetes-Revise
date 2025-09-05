@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: affinity-demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: affinity-demo
+  template:
+    metadata:
+      labels:
+        app: affinity-demo
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+
+      # Add affinity rules here
+      affinity:
+        nodeAffinity: 
+          requiredDuringSchedulingIgnoredDuringExecution:     # Hard Rule 
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: disktype             # Label key
+                operator: In              # In, NotIn, Exists, DoesNotExist
+                values:
+                  - ssd   # Only schedule pods on nodes with disktype=ssd label
+                  
+          preferredDuringSchedulingIgnoredDuringExecution:      # Soft Rule
+          - weight: 1
+            preference:
+              matchExpressions:
+              - key: region
+                operator: In
+                values:
+                  - us-east-1   # Prefer nodes in region=us-east-1 if available
+
+        podAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                  - backend
+            topologyKey: "kubernetes.io/hostname" 
+            # Means: place this pod ON THE SAME NODE as pods with label app=backend
+
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                    - affinity-demo
+              topologyKey: "kubernetes.io/hostname"
+              # Means: try to spread pods across different nodes (avoid same node)

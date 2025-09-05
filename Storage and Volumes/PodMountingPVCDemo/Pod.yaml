@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-mounting-pvc-demo
+spec:
+  container:
+    - name: nginx-pod-mounting-pvc-demo
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        - name: pod-mounting-pvc-demo
+          mountPath: "/app/data"
+  volumes:
+    - name: pod-mounting-pvc-demo
+      persistentVolumeClaim:
+        claimName: pod-mounting-pvc-demo

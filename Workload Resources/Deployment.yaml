@@ -20,3 +20,8 @@ spec:
           image: nginx:latest
           ports: 
             - containerPort: 80
+
+
+# Refer to the labels of the selector attribute ie matchLabels.app
+# and create 3 replicas . When teh replica pods are created give them from the 
+# template.metadata.labels.app
