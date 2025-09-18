@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: pod-with-cluster-role-demo
+  namespace: app-1
+spec:
+  serviceAccountName:  service-account-for-roles
+  containers:
+    - name: pod-with-cluster-role
+      image: nginx:latest

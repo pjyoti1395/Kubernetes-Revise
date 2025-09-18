@@ -4,7 +4,7 @@ metadata:
   name: view-pods-role-binding
 subjects:
   - kind: ServiceAccount
-    name: service-account-view-pods-demo
+    name: service-account-for-roles
     apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: Role
