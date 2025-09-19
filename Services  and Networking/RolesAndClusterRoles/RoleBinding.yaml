@@ -5,7 +5,7 @@ metadata:
   namespace: app-1   # Important: RoleBinding is namespace-scoped
 subjects:
   - kind: ServiceAccount
-    name: service-account-for-roles
+    name: service-account-for-service-roles
     namespace: app-1   # Important: specify the namespace of the SA
     apiGroup: ""        # <-- Must be empty for ServiceAccount
 roleRef:
