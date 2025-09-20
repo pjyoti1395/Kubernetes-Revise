@@ -9,4 +9,4 @@ spec:
     app: nginx-deployment
   ports:
     - port: 20       # Service port (what others use to access)
-      targetPort: 90 # Pod containerPort (your nginx container)
+      targetPort: 80 # Pod containerPort (your nginx container)
