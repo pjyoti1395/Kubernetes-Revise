@@ -16,4 +16,4 @@ spec:
               service:
                 name:  clusterip-service-demo            # refer to ClusterIP.yaml Demo metadata.name
                 port: 
-                  number:  20                             # refer to ClusterIP.yaml  port 
+                  number:  80                             # refer to ClusterIP.yaml  port 
