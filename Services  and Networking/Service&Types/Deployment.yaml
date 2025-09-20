@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: nginx-deploy
   namespace: app-1
   labels: 
-    app: nginx-deploy
+    app: nginx-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx-deploy
+      app: nginx-deployment   # should the same name as service.selector.app then only service will find the appropriate pods 
   template:
     metadata:
       labels: 
-        app: nginx-deploy 
+        app: nginx-deployment  # should the same name as service.selector.app  
     spec: 
       containers:
         - name: nginx-container
