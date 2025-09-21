@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata: 
-  name:  Pod-With-ConfigMap-VolumeMount-Var-Demo
-  namespace: Pod-With-ConfigMap-VolumeMount-Var
+  name:  pod-with-configmap-volumeMount-var-demo
+  namespace: app-1
   labels: 
-    app: Pod-With-VolumeMount-Var
+    app: pod-with-volumemount-var
 spec:
   containers:
-    - name: Nginx-ConfigMap-With-VolumeMount-Container
+    - name: nginx-configMap-with-volumemount-container
       image: nginx:1.17
       ports:
         containerPort: 90

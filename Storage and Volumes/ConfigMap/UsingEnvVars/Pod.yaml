@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata: 
-  name:   Pod-With-ConfigMap-Env-Var-Demo
+  name:  pod-with-configmap-env-var-demo
   namespace: app-1
   labels: 
-    app: Pod-With-ConfigMap-Env-Var
+    app: pod-with-configmap-env-var
 spec:
   containers:
-    - name: Nginx-ConfigMap-With-Env-Container
+    - name: nginx-configmap-env-container
       image:  nginx:1.19
       ports:
         - containerPort: 82
