@@ -8,11 +8,11 @@ spec:
   replicas: 3
   selector: 
     matchLabels:
-      app:  frontend-network-policy
+      app:  frontend-pod
   template:
     metadata:
       labels:
-        app: frontend-network-policy
+        app: frontend-pod
   containers:
     - name: frontend 
       image: busybox

@@ -5,14 +5,14 @@ metadata:
 spec:
   podSelector:  
     matchLabels:
-      app: network-policy-backend
+      app: backend-pod  # this must match the podSelector labels ie selector.matchlabels.app
   policyTypes:
     - Ingress
   ingress:
     - from:
         - podSelector:  
             matchLabels:
-              app: network-policy-frontend
+              app: frontend-pod 
       ports:
         - protocol: TCP
           port: 80
@@ -35,14 +35,14 @@ spec:
 # spec: 
 #   podSelector:
 #     matchLabels:
-#         app:  network-policy-frontend
+#         app:  frontend-pod
 #   policyTypes: 
 #     - Egress
 #   egress:
 #     - to:
 #       - podSelector:
 #           matchLabels:
-#             app:  network-policy-backend
+#             app:  backend-pod
 #       ports:
 #         - protocol: TCP
 #           port: 80 

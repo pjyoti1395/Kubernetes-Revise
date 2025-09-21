@@ -8,11 +8,11 @@ spec:
   replicas: 2
   selector:
     matchLabels:  
-      app: backend
+      app: backend-pod
   template:
     metadata: 
       labels:
-        app: backend
+        app: backend-pod
   containers:
     - name: backend-pod-for-network-policy
       image: nginx

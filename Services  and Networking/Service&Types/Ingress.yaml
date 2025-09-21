@@ -17,3 +17,7 @@ spec:
                 name:  clusterip-service-demo            # refer to ClusterIP.yaml Demo metadata.name
                 port: 
                   number:  80                             # refer to ClusterIP.yaml  port 
+
+
+#host == nginx.example.com AND path starts with /
+  #  → forward to clusterip-service-demo:80
