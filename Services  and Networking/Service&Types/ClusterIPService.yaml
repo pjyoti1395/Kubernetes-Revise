@@ -8,5 +8,5 @@ spec:
   selector:
     app: nginx-deployment
   ports:
-    - port: 80       # Service port (what others use to access)
+    - port: 80       # Service port (what others use to access)(can be different from the target port)
       targetPort: 80 # Pod containerPort (your nginx container)
