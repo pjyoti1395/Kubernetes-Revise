@@ -13,7 +13,8 @@ spec:
     metadata:
       labels:
         app: frontend-pod
-  containers:
-    - name: frontend 
-      image: busybox
-      command: ["sleep", "3600"]
+    spec:
+      containers:
+      - name: frontend 
+        image: busybox
+        command: ["sleep", "3600"]
