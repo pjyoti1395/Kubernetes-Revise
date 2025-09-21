@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: 
-  name:  pod-with-configmap-volumeMount-var-demo
+  name:  pod-with-configmap-volumemount-var-demo
   namespace: app-1
   labels: 
     app: pod-with-volumemount-var
