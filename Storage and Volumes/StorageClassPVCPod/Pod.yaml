@@ -7,7 +7,7 @@ spec:
     - name: nginx-using-storageclass-pvc
       image: nginx:1.17
       ports:
-        containerPort: 80
+        - containerPort: 80
       volumeMounts:
         - name:  storageclass-pvc-volume
           mountPath: "/app/data"
