@@ -11,7 +11,6 @@ spec:
       volumeMounts:
         - name:  pod-with-pvc-volume
           mountPath: "/app/user"
-          readOnly : true
   volumes: 
     - name:  pod-with-pvc-volume
       persistentVolumeClaim:
