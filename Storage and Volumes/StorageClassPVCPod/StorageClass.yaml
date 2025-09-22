@@ -2,8 +2,25 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: standard-read-write-once-storage-class
-provisioner: kubernetes.io/aws-ebs
-volumeBindingMode:  WaitForFirstConsumer
+provisioner: k8s.io/minikube-hostpath
+volumeBindingMode: WaitForFirstConsumer
+
+
+
+
+
+
+
+# since i am using minikube cluster i am changing the provisioner name
+
+
+
+#apiVersion: storage.k8s.io/v1
+#kind: StorageClass
+#metadata:
+# name: standard-read-write-once-storage-class
+#provisioner: kubernetes.io/aws-ebs
+#volumeBindingMode:  WaitForFirstConsumer
 
 
 
