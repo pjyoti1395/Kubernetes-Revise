@@ -8,4 +8,9 @@ spec:
   resources:
     requests:
       storage:  1Gi
-  storageClassName : pod-mounting-pvc-storage-class 
+  storageClassName : manual 
+
+
+
+  #storageClassName: manual meaning the pv is created already . it 
+  # will use the  pv from the PVPVC folder 
