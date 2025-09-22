@@ -11,3 +11,10 @@ spec:
   storageClassName: manual
   hostPath:
     path: "/mnt/data-pod-mounting"
+
+
+    # /mnt/data-pod-mounting  is running at the node level for that reason 
+    # i have to get the nodes of the pod using kubectl get pods -o wide 
+    # and then ssh into the node and go to the directory specified in the pv hospath
+    # make some changes to the file and then exit 
+    # again go inside the container to see the changes 

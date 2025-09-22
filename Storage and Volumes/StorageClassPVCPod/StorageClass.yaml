@@ -4,3 +4,9 @@ metadata:
   name: standard-read-write-once-storage-class
 provisioner: kubernetes.io/aws-ebs
 volumeBindingMode:  WaitForFirstConsumer
+
+
+
+#the storage class is created dynamically hence there is no need of pv 
+# the   storageClassName: standard-read-write-once-storage-class in pvc 
+# if the   storageClassName: manual then pv should be created first
