@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: pod-mounting-pvc-demo
 spec:
-  container:
+  containers:
     - name: nginx-pod-mounting-pvc-demo
       image: nginx:latest
       ports:
