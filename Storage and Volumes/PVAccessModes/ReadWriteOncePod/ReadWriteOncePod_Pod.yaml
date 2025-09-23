@@ -1,16 +1,17 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: read-only-once-pod-demo
+  name: read-write
+  -once-pod-demo
 spec:
   containers:
-    - name: nginx-read-only-once-container
+    - name: nginx-read-write-once-container
       image: nginx:latest
       volumeMounts:
-        - name: read-only-once-pod-volume
+        - name: read-write-once-pod-volume
           mountPath: "/app/data"
           readOnly: true
   volumes:  
-    - name: read-only-once-pod-volume
+    - name: read-write-once-pod-volume
       persistentVolumeClaim:
-        - name: read-only-once-persistent-volume-claim-demo
+        - name: read-write-once-persistent-volume-claim-demo
