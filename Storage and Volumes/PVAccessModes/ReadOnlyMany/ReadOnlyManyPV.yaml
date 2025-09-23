@@ -8,6 +8,6 @@ spec:
   accessModes:
     - ReadOnlyMany
   persistentVolumeReclaimPolicy:  Delete
-  storageClassName: manual 
+  storageClassName: manual   
   hostPath:
     path: "/mnt/data/rox"
