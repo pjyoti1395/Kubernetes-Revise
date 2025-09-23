@@ -1,8 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: read-write
-  -once-pod-demo
+  name: read-write-once-pod-demo
 spec:
   containers:
     - name: nginx-read-write-once-container
