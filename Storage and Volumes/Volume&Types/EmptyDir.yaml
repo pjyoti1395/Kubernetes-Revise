@@ -1,20 +1,19 @@
 apiVersion: v1
-kind:  Pod
+kind: Pod
 metadata:
-  name:  emptydir-pod-demo
+  name: emptydir-pod-demo
 spec:
   containers:
-    - name:
+    - name: emptyDir-container
       image: nginx:latest
-      port:
-        containerPort: 30
-  volumesMounts:
-    - name:  temp-storage
-      mountPath: /data
-volume:
-  - name:  temp-storage
-    emptyDir: {}
-
+      ports:
+        - containerPort: 30
+      volumeMounts:                     # ✅ Must be inside the container spec
+        - name: temp-storage
+          mountPath: /data
+  volumes:
+    - name: temp-storage
+      emptyDir: {}
 
 
 
