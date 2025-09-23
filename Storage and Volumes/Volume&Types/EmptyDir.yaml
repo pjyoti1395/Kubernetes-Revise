@@ -4,7 +4,7 @@ metadata:
   name: emptydir-pod-demo
 spec:
   containers:
-    - name: emptyDir-container
+    - name: emptydir-container
       image: nginx:latest
       ports:
         - containerPort: 30
