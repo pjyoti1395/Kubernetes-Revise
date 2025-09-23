@@ -6,7 +6,7 @@ spec:
   capacity: 
     storage: 3Gi
   accessModes:
-    - ReadOnlyOncePod
+    - ReadWriteOncePod 
   persistentVolumeReclaimPolicy:  Delete
   storageClassName: manual 
   hostPath:
