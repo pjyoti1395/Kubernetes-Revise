@@ -11,4 +11,4 @@ spec:
   storageClassName: manual 
   nfs:
     path: /exports
-    server: 192.168.1.100   #nfs server
+    server: 192.168.49.2   #nfs server

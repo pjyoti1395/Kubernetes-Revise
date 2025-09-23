@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: read-write-once-pod1-demo
+spec:
+  containers:
+    - name: nginx-read-only-many-container1
+      image: nginx:latest
+      volumeMounts:
+        - name: read-write-once-volume1
+          mountPath: "/app/data"
+  volumes:  
+    - name: read-write-once-volume1
+      persistentVolumeClaim:
+        claimName:  read-write-once-persistent-volume-claim-demo
