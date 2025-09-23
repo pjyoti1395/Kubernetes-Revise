@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: read-write-once-persistent-volume-claim-demo
+  name: rwo-persistent-volume-claim-demo
 spec:
   accessModes: 
     - ReadWriteOnce
