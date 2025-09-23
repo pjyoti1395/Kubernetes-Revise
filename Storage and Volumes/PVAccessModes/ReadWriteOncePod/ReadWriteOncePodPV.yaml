@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: read-write-once-pv-demo
+  name: read-write-once-pod-pv-demo
 spec:
   capacity: 
     storage: 3Gi
