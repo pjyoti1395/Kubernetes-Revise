@@ -6,12 +6,12 @@ spec:
   containers:
     - name: nginx-hostpath-demo-container
       image: nginx:1.18
-  volumeMounts:
+      volumeMounts:
+        - name: hostpath-volume
+          mountPath: /app             # Inside the container
+  volumes:
     - name: hostpath-volume
-      path: /app             # Inside the container
-volume:
-  - name: hostpath-volume
-    hostPath: 
-      path: /data/my-website     # Path on the Node
-      type:   DirectoryOrCreate      # Create if it doesn't exist
- 
+      hostPath: 
+        path: /data/my-website     # Path on the Node
+        type:   DirectoryOrCreate      # Create if it doesn't exist
+  
