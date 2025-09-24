@@ -13,18 +13,19 @@ spec:
     metadata:
       labels:
         app: nginx
-  containers:
-    - name: nginx-deployment-hpa-container
-      image:  nginx:latest
-      ports:
-        - containerPort: 80
-      resources:
-        requests:
-          cpu:  "100m"
-          memory: "128Mi"
-        limits:
-          cpu: "200m"
-          memory: "256Mi"
+    spec:
+      containers:
+      - name: nginx-deployment-hpa-container
+        image:  nginx:latest
+        ports:
+          - containerPort: 80
+        resources:
+          requests:
+            cpu:  "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "200m"
+            memory: "256Mi"
 
 
 
