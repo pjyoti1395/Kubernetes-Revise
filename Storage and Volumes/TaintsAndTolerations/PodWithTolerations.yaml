@@ -14,7 +14,7 @@ spec:
   tolerations:
     - key: "dedicated"
       value: "database" 
-      operator: "equal"
+      operator: "Equal"
       effect: "NoSchedule"
 
 # The node node1 is tainted → only Pods that tolerate 
