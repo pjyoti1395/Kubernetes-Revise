@@ -3,7 +3,7 @@ kind: Deployment
 metadata: 
   name: hpa-deployment-demo
   labels: 
-    app: "HPA Deployment"
+    app: "hpa-deployment"
 spec:
   replicas: 1
   selector:
@@ -16,16 +16,13 @@ spec:
     spec:
       containers:
       - name: nginx-deployment-hpa-container
-        image:  nginx:latest
+        image: nginx:latest
         ports:
-          - containerPort: 80
+        - containerPort: 80
         resources:
           requests:
-            cpu:  "100m"
+            cpu: "100m"
             memory: "128Mi"
           limits:
             cpu: "200m"
             memory: "256Mi"
-
-
-
