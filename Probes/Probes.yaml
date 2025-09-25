@@ -7,13 +7,13 @@ spec:
     - name: nginx
       image: nginx:latest
       ports:
-        - containerPort: 8080
+        - containerPort: 80
 
       # Liveness Probe
       livenessProbe:
         httpGet:
           path: /
-          port: 8080
+          port: 80
         initialDelaySeconds: 15   # Wait 15s before first check
         periodSeconds: 20         # Run every 20s
         failureThreshold: 3       # Restart container after 3 consecutive failures
@@ -22,7 +22,10 @@ spec:
       readinessProbe:
         httpGet:
           path: /
-          port: 8080
+          port: 80
         initialDelaySeconds: 5    # Wait 5s before first check
         periodSeconds: 10         # Run every 10s
         failureThreshold: 3       # Mark pod NotReady after 3 consecutive failures
+
+
+        
