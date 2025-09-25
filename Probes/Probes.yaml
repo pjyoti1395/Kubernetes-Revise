@@ -4,8 +4,8 @@ metadata:
   name: my-app-probes
 spec:
   containers:
-    - name: my-app
-      image: my-app:1.0
+    - name: nginx
+      image: nginx:latest
       ports:
         - containerPort: 8080
 
