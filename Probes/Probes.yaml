@@ -12,7 +12,7 @@ spec:
       # Liveness Probe
       livenessProbe:
         httpGet:
-          path: /health
+          path: /
           port: 8080
         initialDelaySeconds: 15   # Wait 15s before first check
         periodSeconds: 20         # Run every 20s
@@ -21,7 +21,7 @@ spec:
       # Readiness Probe
       readinessProbe:
         httpGet:
-          path: /ready
+          path: /
           port: 8080
         initialDelaySeconds: 5    # Wait 5s before first check
         periodSeconds: 10         # Run every 10s
