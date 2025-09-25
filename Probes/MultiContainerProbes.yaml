@@ -7,39 +7,39 @@ spec:
     - name: frontend
       image: nginx:latest
       ports:
-        - containerPort: 8080
+        - containerPort: 80
       readinessProbe:
         httpGet:
           path: /
-          port: 8080
+          port: 80
         initialDelaySeconds: 5  
         periodSeconds: 10
       livenessProbe:
         httpGet:
           path: /
-          port: 8080
+          port: 80
         initialDelaySeconds: 15
         periodSeconds: 20
 
     - name: backend
       image: nginx:latest
       ports:
-        - containerPort: 9090
+        - containerPort: 80
       startupProbe:
         httpGet:
           path: /
-          port: 9090
+          port: 80
         failureThreshold: 12
         periodSeconds: 5
       readinessProbe:
         httpGet:
           path: /
-          port: 9090
+          port: 80
         initialDelaySeconds: 5
         periodSeconds: 10
       livenessProbe:
         httpGet:
           path: /
-          port: 9090
+          port: 80
         initialDelaySeconds: 15
         periodSeconds: 20
